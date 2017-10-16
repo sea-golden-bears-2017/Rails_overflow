@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
-  get '/' => "posts#index"
+  root "posts#index"
   resources :posts
+  resources :posts do
+    resources :answers, only: :create
+  end
 end

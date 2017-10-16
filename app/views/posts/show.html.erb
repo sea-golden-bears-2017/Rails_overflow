@@ -3,6 +3,7 @@
   <p><%= @post.description %></p>
 </div>
 
+
 <div class="answers-container">
   <h2>Answers:</h2>
   <ul>
@@ -12,4 +13,23 @@
     </li>
   <% end %>
   </ul>
+  <div class="errors">
+    <% if @errors %>
+      <% @errors.each do |error| %>
+        <p class="error"> <%= error %> </p>
+      <% end %>
+    <% end %>
+  </div>
+  <%= form_for @answer, url: post_answers_path(@post) do |f| %>
+  <div class="">
+    <%= f.text_field :description %>
+  </div>
+  <div class="">
+  </div>
+  <%= f.hidden_field(:post_id, :value => @post.id)%>
+  <div class="">
+    <%= f.submit %>
+  </div>
+  <% end %>
+
 </div>

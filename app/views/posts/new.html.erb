@@ -1,0 +1,38 @@
+<h1>Create a new post</h1>
+<div class="errors">
+  <% if @errors %>
+    <% @errors.each do |error| %>
+      <p class="error"> <%= error %> </p>
+    <% end %>
+  <% end %>
+</div>
+
+<div class="">
+  <%= form_for @post, url: posts_path do |f| %>
+  <div class="">
+    <%= f.label :title %>:
+    <%= f.text_field :title %>
+  </div>
+  <div class="">
+    <%= f.label :description %>:
+    <%= f.text_field :description %>
+  </div>
+<div class="">
+  <%= f.submit %>
+</div>
+  <% end %>
+</div>
+
+<!-- <div class="post-form-container">
+  <form action="<%= posts_path %>" method="post">
+    <div class="description">
+      <label>Title: </label>
+      <input type="text" name="title">
+    </div>
+    <div class="description">
+      <label>Description: </label>
+      <input type="text" name="description">
+    </div>
+    <input type="submit" value="Submit">
+  </form>
+</div> -->
