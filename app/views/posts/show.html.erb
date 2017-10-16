@@ -2,3 +2,14 @@
   <h1><%= @post.title %></h1>
   <p><%= @post.description %></p>
 </div>
+
+<div class="answers-container">
+  <h2>Answers:</h2>
+  <ul>
+  <% @answers.each do |answer|%>
+    <li>
+      <%= answer.description %>
+    </li>
+  <% end %>
+  </ul>
+</div>
